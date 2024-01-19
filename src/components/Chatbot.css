@@ -1,0 +1,90 @@
+.wave {
+  animation-name: wave;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  10% {
+    transform: rotate(16deg)
+  }
+
+  20% {
+    transform: rotate(-8deg)
+  }
+
+  30% {
+    transform: rotate(14deg)
+  }
+
+  40% {
+    transform: rotate(-4deg)
+  }
+
+  50% {
+    transform: rotate(9deg)
+  }
+
+  60% {
+    transform: rotate(0.0deg)
+  }
+
+  100% {
+    transform: rotate(0.0deg)
+  }
+}
+
+
+@keyframes moveFromTopToBottom {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.lead-tag {
+  z-index: -1;
+  animation: moveFromTopToBottom 0.7s ease-in-out;
+}
+
+@keyframes moveFromBottomToTop {
+  0% {
+    transform: translateY(10%);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.btn-group-animate {
+  animation: moveFromBottomToTop 0.7s ease-in-out;
+}
+
+.guus-animate{
+  animation: moveLeftToRight 0.7s ease-in-out;
+}
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
