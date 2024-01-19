@@ -69,7 +69,7 @@ const ChatResponseData: ChatResponseData = {
         <form>
           <div className="mb-3">
             <label className="form-label">Name</label>
-            <input type="email" className="form-control" id="exampleName" />
+            <input type="text" className="form-control" id="exampleName" />
           </div>
           <div className="mb-3">
             <label className="form-label">Phone</label>
