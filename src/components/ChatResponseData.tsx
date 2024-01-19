@@ -1,4 +1,7 @@
+import React from 'react';
+// @ts-ignore
 import blue from '../assets/neo.gif';
+// @ts-ignore
 import red from '../assets/agent-smith.gif';
 
 const defaultClass = 'bg-light rounded p-3 shadow';
@@ -26,17 +29,35 @@ const defaultClass = 'bg-light rounded p-3 shadow';
  *
  */
 
-const ChatResponseData = {
-  // Every ChatResponseData>key should be unique.
+interface ChatResponse {
+  content: JSX.Element;
+  options: string[];
+}
+
+interface ChatResponseData {
+  [key: string]: ChatResponse;
+}
+
+const checkUniqueKeys = (data: ChatResponseData): void => {
+  const keys = Object.keys(data);
+  const uniqueKeys = new Set(keys);
+  if (keys.length !== uniqueKeys.size) {
+    throw new Error('Keys in ChatResponseData must be unique.');
+  }
+};
+
+const ChatResponseData: ChatResponseData = {
   'I have a question': {
     content: (
       <div className={defaultClass}>
         <form>
           <div className="mb-3">
             <label className="form-label">Sure, what can we assist with?</label>
-            <textarea className="form-control" id="exampleQuestion" rows="5" />
+            <textarea className="form-control" id="exampleQuestion" rows={5} />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
         </form>
       </div>
     ),
@@ -53,13 +74,17 @@ const ChatResponseData = {
           <div className="mb-3">
             <label className="form-label">Phone</label>
             <input type="phone" className="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" />
-            <div id="phoneHelp" className="form-text">Well never share your phone with anyone else.</div>
+            <div id="phoneHelp" className="form-text">
+              Well never share your phone with anyone else.
+            </div>
           </div>
           <div className="mb-3 form-check">
             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
             <label className="form-check-label">Check me out</label>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
         </form>
       </div>
     ),
@@ -68,7 +93,11 @@ const ChatResponseData = {
   'Just looking': {
     content: (
       <div className={defaultClass}>
-        <p><b>Guus</b> from Leadinfo<br /><br />Alright, feel free to ask if you have any questions in the future. Have a great day!</p>
+        <p>
+          <b>Guus</b> from Leadinfo
+          <br />
+          <br />Alright, feel free to ask if you have any questions in the future. Have a great day!
+        </p>
       </div>
     ),
     options: [],
@@ -76,10 +105,10 @@ const ChatResponseData = {
   '🕶 Neo': {
     content: (
       <div className={defaultClass}>
-        <p>Do you want to know what IT is? <br/> ~ Morpheus</p>
+        <p>Do you want to know what IT is? <br /> ~ Morpheus</p>
       </div>
     ),
-    options: ['Yes','No'],
+    options: ['Yes', 'No'],
   },
   'Yes': {
     content: (
@@ -118,4 +147,7 @@ const ChatResponseData = {
   },
 };
 
-export { ChatResponseData };
+// Unique key check
+checkUniqueKeys(ChatResponseData);
+
+export {ChatResponseData};

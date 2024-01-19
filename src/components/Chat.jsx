@@ -49,7 +49,7 @@ const Chat = () => {
                   </div>
                 </div>
               )}
-
+              {/* Intial Chatbot response, same Components are used to read ChatResponseData */}
               <ChatResponseOptions
                 options={['Make appointment', 'I have a question', '🕶 Neo']}
                 onOptionClick={handleOptionClick}
