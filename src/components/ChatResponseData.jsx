@@ -52,7 +52,7 @@ const ChatResponseData = {
   '🕶 Neo': {
     content: (
       <div className={defaultClass}>
-        <p>Do you want to know what IT is? <br/> ~ Neo</p>
+        <p>Do you want to know what IT is? <br/> ~ Morpheus</p>
       </div>
     ),
     options: ['Yes','No'],
