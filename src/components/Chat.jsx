@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ChatResponse, ChatResponseOptions, renderChatResponses } from './ChatResponse';
 import { ChatResponseData } from './ChatResponseData';
 
-import './ChatBot.css';
 import guus from '../assets/default-male-avatar.jpg';
 import messageLogo from '../assets/message.svg';
 
