@@ -79,7 +79,7 @@ const ChatResponseData = {
   '🔴 Red Pill': {
     content: (
       <div className={defaultClass}>
-        <img src={blue} alt="" width={'100%'} />
+        <img src={blue} width={'100%'} height={'100%'} />
       </div>
     ),
     options: [],
@@ -87,7 +87,7 @@ const ChatResponseData = {
   '🔵 Blue Pill': {
     content: (
       <div className={defaultClass}>
-        <img src={red} alt=""  width={'100%'}/>
+        <img src={red} width={'100%'} height={'100%'} />
       </div>
     ),
     options: [],

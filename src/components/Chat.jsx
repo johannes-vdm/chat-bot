@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { ChatResponse, ChatResponseOptions, renderChatResponses } from './ChatResponse';
 import { ChatResponseData } from './ChatResponseData';
 
-import '../Chatbot.css';
+import './Chatbot.css';
 import guus from '../assets/default-male-avatar.jpg';
 import messageLogo from '../assets/message.svg';
-
 
 const Chat = () => {
   const [isChatboxOpen, setIsChatboxOpen] = useState(true);

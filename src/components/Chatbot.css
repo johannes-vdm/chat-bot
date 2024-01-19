@@ -77,6 +77,7 @@
 .guus-animate{
   animation: moveLeftToRight 0.7s ease-in-out;
 }
+
 @keyframes moveLeftToRight {
   0% {
     transform: translateX(-20%);

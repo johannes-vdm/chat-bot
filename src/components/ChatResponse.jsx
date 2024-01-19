@@ -62,4 +62,3 @@ const renderChatResponses = (selectedOptions, responseData, handleOptionClick) =
 };
 
 export { ChatResponse, ChatResponseOptions, renderChatResponses };
-
