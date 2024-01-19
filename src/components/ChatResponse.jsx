@@ -38,10 +38,13 @@ const renderChatResponses = (selectedOptions, responseData, handleOptionClick) =
 
   for (const currentOption of selectedOptions) {
     console.log('Current Option:', currentOption);
+
+    // Currently selected option/answer.
     const optionResponses = responseData[currentOption];
 
     if (optionResponses) {
       console.log('Option Responses:', optionResponses);
+      // Accumulates chat content for each option
       chatContent = (
         <>
           {chatContent}

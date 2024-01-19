@@ -3,7 +3,31 @@ import red from '../assets/agent-smith.gif';
 
 const defaultClass = 'bg-light rounded p-3 shadow';
 
+/**
+ * NOTE
+ * This is a question->response builder.
+ *
+ * Default params from Chat.jsx
+ * -----------------------------
+ * Guus from Leadinfo
+ * Good day 👋
+ * Q: Can I help you?
+ * - Make appointment
+ * - I have a question
+ * - 🕶 Neo
+ *
+ * A: Make appointment
+ * - Contact details
+ * A: I have a question
+ * - Question textarea
+ *
+ * 🕶 Neo
+ * ...
+ *
+ */
+
 const ChatResponseData = {
+  // Every ChatResponseData>key should be unique.
   'I have a question': {
     content: (
       <div className={defaultClass}>

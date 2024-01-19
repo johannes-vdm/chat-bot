@@ -38,6 +38,7 @@ const Chat = () => {
               {_shouldDisplayGuusContainer && (
                 <div className='guus-container'>
                   <img src={guus} width={40} height={40} className='shadow rounded-circle position-absolute mtl-5 guus-animate' alt="Guus from LeadInfo" />
+                  {/* Intial Chatbot response, same Components are used to read ChatResponseData */}
                   <ChatResponse content={<div className='bg-light rounded p-3 shadow'>
                     <p><b>Guus</b> from Leadinfo<br /><br />Good day <span className='wave'>👋</span><br />Can I help you?</p>
                   </div>} />

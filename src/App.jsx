@@ -5,6 +5,7 @@ import  Chat from './components/Chat'
 function App() {
   return (
     <>
+    {/* Sample text to test the effects of scrolling on the Chatbot dialog*/}
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic facilis est amet officia porro totam deserunt pariatur quaerat incidunt, eligendi quos veniam vel dignissimos esse. Labore explicabo at accusantium iste?
       Magnam quis harum veritatis soluta! Hic modi quibusdam pariatur reprehenderit vel facilis dignissimos fugiat nisi. Nesciunt ex, dolore ab quasi, soluta temporibus veritatis repudiandae expedita quam id cupiditate eligendi quidem?
       Laboriosam reprehenderit itaque temporibus veritatis suscipit ut perferendis nam explicabo perspiciatis, ipsa ad distinctio fugit incidunt aliquam iusto, nisi rem enim molestiae eum saepe nulla alias minus quas quis! Distinctio?
