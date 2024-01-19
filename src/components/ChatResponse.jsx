@@ -11,9 +11,9 @@ const ChatResponseOptions = ({ options, onOptionClick, selectedOption }) => {
     <div className='d-flex flex-column align-items-end btn-group-animate'>
       {selectedOption ? (
         <button
-          className={`btn btn-light btn-outline-secondary rounded-pill shadow my-1 ${selectedOption === selectedOption ? 'selected' : ''}`}
+          className={`btn btn-light btn-outline-secondary rounded-pill shadow my-1 ${selectedOption === selectedOption ? 'selected btn-info' : ''}
+          `}
           onClick={() => handleOptionClick(selectedOption)}
-          disabled={selectedOption === selectedOption}
         >
           {selectedOption}
         </button>
@@ -23,7 +23,6 @@ const ChatResponseOptions = ({ options, onOptionClick, selectedOption }) => {
             key={index}
             className={`btn btn-light btn-outline-secondary rounded-pill shadow my-1 ${option === selectedOption ? 'selected' : ''}`}
             onClick={() => handleOptionClick(option)}
-            disabled={option === selectedOption}
           >
             {option}
           </button>

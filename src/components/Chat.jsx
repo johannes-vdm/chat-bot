@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { ChatResponse, ChatResponseOptions, renderChatResponses } from './ChatResponse';
-import { responseData } from './responses';
+import { ChatResponseData } from './ChatResponseData';
 
 import './ChatBot.css';
 import guus from '../assets/default-male-avatar.jpg';
 import messageLogo from '../assets/message.svg';
+
 
 const Chat = () => {
   const [isChatboxOpen, setIsChatboxOpen] = useState(true);
@@ -16,13 +17,14 @@ const Chat = () => {
   };
 
   const handleOptionClick = (option) => {
-    // If 'Make appointment' is selected, clear the selectedOptions
-    if (option === 'Make appointment') {
+    if (option) {
       setSelectedOptions([option]);
     } else {
       setSelectedOptions([...selectedOptions, option]);
     }
   };
+
+  const _shouldDisplayGuusContainer = selectedOptions.length == 0;
 
   return (
     <>
@@ -30,25 +32,30 @@ const Chat = () => {
         <div className="position-relative" style={{ width: '300px' }}>
           {isChatboxOpen && (
             <div className="chat-container">
-              <img src={guus} width={40} height={40} className='shadow rounded-circle position-absolute mtl-5 guus-animate' alt="Guus from LeadInfo" />
               <button
-                className="btn btn-close bg-light position-absolute end-0 mtn-5 rounded-circle p-2"
+              className="btn btn-close bg-light position-absolute end-0 mtn-5 rounded-circle p-2"
                 onClick={() => chatBoxDisplay()}
               ></button>
-              <ChatResponse content={<div className='bg-light rounded p-3 shadow'>
-                <p><b>Guus</b> from Leadinfo<br /><br />Good day <span className='wave'>👋</span><br />Can I help you?</p>
-              </div>} />
-              <div className='align-items-end d-flex flex-column'>
-                <span className='lead-tag bg-black text-light rounded-bottom mx-2 px-1 p-1px fs-6 lead-tag'>
-                  Powered by Leadinfo ⚡
-                </span>
-              </div>
+              {_shouldDisplayGuusContainer && (
+                <div className='guus-container'>
+                  <img src={guus} width={40} height={40} className='shadow rounded-circle position-absolute mtl-5 guus-animate' alt="Guus from LeadInfo" />
+                  <ChatResponse content={<div className='bg-light rounded p-3 shadow'>
+                    <p><b>Guus</b> from Leadinfo<br /><br />Good day <span className='wave'>👋</span><br />Can I help you?</p>
+                  </div>} />
+                  <div className='align-items-end d-flex flex-column'>
+                    <span className='lead-tag bg-black text-light rounded-bottom mx-2 px-1 p-1px fs-6 lead-tag'>
+                      Powered by Leadinfo ⚡
+                    </span>
+                  </div>
+                </div>
+              )}
+
               <ChatResponseOptions
-                options={['Make appointment', 'I have a question', 'Just Looking']}
+                options={['Make appointment', 'I have a question', '🕶 Neo']}
                 onOptionClick={handleOptionClick}
                 selectedOption={selectedOptions.length > 0 ? selectedOptions[0] : null}
               />
-              {renderChatResponses(selectedOptions, responseData, handleOptionClick)}
+              {renderChatResponses(selectedOptions, ChatResponseData, handleOptionClick)}
             </div>
           )}
           <div className='d-flex flex-row-reverse'>
